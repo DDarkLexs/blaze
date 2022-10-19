@@ -11,7 +11,15 @@ app.use(cors());
 routes(app);
 app.use(express.static("src/public"));
 
+app.get('/', (req, res) => {
+  res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+})
+
 app.listen(5000,() => {
     console.clear()
      console.log(`servidor a ser executado na porta:${PORT}`);
 })
+
+
+
+export default app
