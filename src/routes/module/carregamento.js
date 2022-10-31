@@ -3,34 +3,30 @@ import multer from 'multer'
 import path from 'path'
 const _path = './carregado'
 import fs from 'fs'
-import controller from '../../controller/carregamento'
-const { modificarArquivo,
+import { modificarArquivo,
+    getUsusarioUploadByIdUsuario,
     finalResponse,
-    registrandoCarregamento
- } = controller
-
+    registrandoCarregamento,
+ } from '../../controller/carregamento'
+ import { authToken, generateAccessToken } from '../../configs'
 export default (app) => {
     
     const dist = multer({ dest:_path })
 
-    app.route("/carregamento")
-    .get(dist.single('file'),
-    async (req,res,next) => {
-
-    
-        res.send("ok")
-    })
 
 
     app.route("/carregamento")
-    .post(async (req,res,next) => {
+    .post(authToken,async (req,res,next) => {
 
-        console.log("Fazendo carregamento")
+        // console.log(req.user.id_usuario)
         next()
     },dist.single('file'),
     modificarArquivo,
     registrandoCarregamento,
     finalResponse)
+    .get(authToken, async (req,res,next) => {
+        next()
+    },getUsusarioUploadByIdUsuario)
 
 
 }

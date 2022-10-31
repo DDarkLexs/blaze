@@ -1,1 +1,4 @@
-GET http://192.168.2.2:5000/api/auth/usuario?nome=admin&senha=admin
+# POST  http://localhost:5000/token
+GET  http://localhost:5000/token
+
+//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJub21lIjoiYW50b25pbyBsdWdvZ28iLCJpYXQiOjE2NjcyMjg5MjYsImV4cCI6MTY2NzIzMDcyNn0.tAQLFm3KoR8xLwaiRIIFTKsu5tBhIiD6ofdbwWPgI1E
