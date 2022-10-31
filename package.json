@@ -1,5 +1,5 @@
 {
-  "name": "babelSetup",
+  "name": "blaze",
   "version": "1.0.0",
   "main": "src/index.js",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "multer": "^1.4.5-lts.1",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "sqlite3": "^5.1.2"
   }
 }

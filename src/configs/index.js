@@ -1,9 +1,12 @@
-export const mysql = {
-    client: 'mysql',
-    connection: {
-      host : '127.0.0.1',
-      user : 'root',
-      password : '',
-      database : 'identidade'
-    }
+import path from 'path'
+
+export const sqliteConnection = {
+  client: 'sqlite3', // or 'better-sqlite3'
+  connection: {
+    filename: path.join(process.env.INIT_CWD+'/src/database/index.db')
+  },
+  useNullAsDefault:true
 }
+
+
+// console.log(path.join(process.env.INIT_CWD+'/src/database/index.db'))

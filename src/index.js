@@ -20,6 +20,3 @@ app.listen(5000,() => {
      console.log(`servidor a ser executado na porta:${PORT}`);
 })
 
-
-
-export default app

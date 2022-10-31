@@ -1,7 +1,6 @@
 import fs from 'fs'
 import path from "path"
-
-
+import knex from '../model'
 
 export default  {
 
@@ -12,8 +11,16 @@ export default  {
     res.json({msg: "ok", response: true})
     },
 
-    registrandoCarregamento: (req,res,next) => {
+    registrandoCarregamento: async (req,res,next) => {
     console.log(`Vai inserindo para o banco de dados`)
+     await knex("carregamento").insert({ 
+        nome:req.file.originalname,	
+        caminho:(`${req.file.destination}/${req.file.originalname}`),
+        tipo:req.file.mimetype,
+        destino:req.file.destination,
+        tamanho:req.file.size,
+        datacad:new Date().toLocaleString(),
+     })
 
         next()
     },
