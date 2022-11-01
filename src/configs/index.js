@@ -2,6 +2,7 @@ import path from 'path'
 import dotenv from 'dotenv'
 import  jwt from "jsonwebtoken"
 import md5 from "md5"
+import numeral from "numeral"
 dotenv.config()
 
 export const sqliteConnection = {
@@ -18,7 +19,6 @@ export const sqliteConnection = {
 export function generateAccessToken(user) {
   // console.log(user)
   return jwt.sign(user, process.env.TOKEN_SECRET, { expiresIn: '1800s' })}
-
 
 export function authToken(req,res,next) {
   const authHeader = req.headers['authorization']
@@ -41,6 +41,12 @@ export function authToken(req,res,next) {
   })
 
 
+}
+
+
+export const formatToByte = (value) => {
+
+  return numeral(value).format('0b')
 }
 
 
