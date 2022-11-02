@@ -31,3 +31,5 @@ app.listen(PORT,() => {
     console.log(`servidor a ser executado na porta:${PORT}`);
 })
 
+
+module.exports = app;
