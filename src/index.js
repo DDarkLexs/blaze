@@ -22,6 +22,12 @@ app.use(express.static("src/public"));
 
 app.get('/', (req, res) => {
 
+  res.json({ msg:"hello world" });
+
+})
+
+app.get('/app', (req, res) => {
+
   res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 
 })
