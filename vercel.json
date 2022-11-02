@@ -5,5 +5,11 @@
         "src": "build/index.js",
         "use": "@now/node"
       }
+    ],
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/build/index.js"
+        }
     ]
   }
