@@ -1,9 +1,9 @@
-import express from 'express';
-import bodyParser from 'body-parser';
+import express from 'express'
+import bodyParser from 'body-parser'
 import routes from './routes'
 import cors from 'cors'
 import dotenv from 'dotenv'
-import { authToken, generateAccessToken,formatToByte } from './configs'
+// import { authToken, generateAccessToken,formatToByte } from './configs'
 
 dotenv.config()
 
@@ -28,7 +28,6 @@ app.get('/', (req, res) => {
 
 app.listen(PORT,() => {
   console.clear()
-    // console.log(formatToByte(1000))
     console.log(`servidor a ser executado na porta:${PORT}`);
 })
 

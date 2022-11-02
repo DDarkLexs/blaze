@@ -12,13 +12,13 @@ export default (app) => {
     app.route("/auth/usuario")
     .get((req,res,next) => {
 
-       console.log("autenticando usuario")
+    //    console.log("autenticando usuario")
 
         next()
     }, findUsuario)
     .post((req,res,next) => {
 
-      console.log(req.query)
+    //   console.log(req.query)
       next()
     },insertNewUsuario)
 
